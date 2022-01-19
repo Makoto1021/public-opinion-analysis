@@ -1,0 +1,13 @@
+main.py
+main_dep.py
+clean_text.py
+prepare_tweets.py
+search_tweets_v2.py
+store_in_psql.py
+tokenizing_text.py
+translate_tweets.py
+credentials_v1.json
+credentials_v2.json
+*.ipynb
+*models*
+*env-public-opinion*

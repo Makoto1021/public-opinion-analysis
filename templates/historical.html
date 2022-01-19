@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Historical
+{% endblock %}
+{% block main %}
+
+<form action="/historical" method="POST">
+    <div class="form-group">
+        <label for="politicians">Choose politicians:</label>
+        <!--select id="politicians" name="select-politicians" size="4" multiple-->
+        <select id="politicians" name="select-politicians" class="selectpicker" multiple data-live-search="true">
+            {% for politician in politicians_list %}
+            <option value={{politician[0]}}>{{politician[0]}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <!--input type="submit"-->
+    <button class="btn btn-primary" type="submit">Display</button>
+</form>
+
+
+
+{% if chart_data is defined %}
+<div class="container" style="position: relative; height:100%; width:100%">
+    <canvas id="historical-chart" width="800" height="450"></canvas>
+
+    <script type="text/javascript">
+        barChart = plotLineChart(x = {{ timestamp | tojson}}, y = {{ chart_data | tojson }})
+    </script>
+</div>
+{% else %}
+
+{% endif %}
+{% endblock %}

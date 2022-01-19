@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Daily
+{% endblock %}
+{% block main %}
+<form action="/daily" method="POST">
+    <div class="form-group">
+        <label for="start">Pick up a date:</label>
+        <input type="date" id="date" name="tweet-date" value={{ today }}>
+    </div>
+    <button class="btn btn-primary" type="submit">Display</button>
+</form>
+
+{% if chart_data is defined %}
+<div class="container">
+    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+
+    <script type="text/javascript">
+        barChart = plotBarChart({{ chart_data | tojson }})
+    </script>
+</div>
+{% else %}
+
+{% endif %}
+{% endblock %}

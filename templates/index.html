@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block main %}
+<div>
+    <h5>In this website, you can see public sentiment towards politicians in Japan's National Diet. You, as a
+        politician, can monitor how people are reacting to your job on a daily basis.</h5>
+    <p>Today's politics is not only about attending as many meetings as possible to make themselves known to the public.
+        Politicians are required to adjust and improve their manifesto by analyzing people's reaction. This website
+        provides the politicians with power to better understand public, by leveraging the technology of Natural
+        Language Processing.
+    </p>
+    <p>
+        For this analysis, data are collected from tweets.
+    </p>
+</div>
+<div class='buttons'>
+    <a href="/daily">
+        <div id="daily" class="large-button">Daily sentiment analysis</div>
+    </a>
+    <a href="/historical">
+        <div id="historical" class="large-button">Historical sentiment analysis</div>
+    </a>
+</div>
+
+<!--div>
+    <a href="/daily">
+        <button class="shortcut info outline rounded no-caption bg-lightBlue bd-black-hover fg-black">
+            <span class="mif-rocket mif-5x"></span>
+            <span class="caption">Daily sentiment analysis</span>
+        </button>
+    </a>
+    <a href="/historical">
+        <button class="shortcut info outline rounded no-caption bg-lightBlue bd-black-hover fg-black">
+            <span class="mif-rocket mif-5x"></span>
+            <span class="caption">Historical sentiment analysis</span>
+        </button>
+    </a>
+</div-->
+
+{% endblock %}
